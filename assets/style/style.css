@@ -589,7 +589,7 @@ a:hover {
 .conguration {
     color: #ee2624;
     margin: 5px 0 10px;
-    display: none;
+    display: block;
 }
 
 .show-conguration {

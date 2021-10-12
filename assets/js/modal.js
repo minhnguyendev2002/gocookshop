@@ -134,7 +134,9 @@ function showlog() {
             checkvalue = true;
         } 
     }
-    location.reload();
+    if(checkvalue === true) {
+        location.reload();
+    } 
 }
 
 var index = localStorage.getItem("userid");
