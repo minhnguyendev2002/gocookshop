@@ -44,7 +44,7 @@ if(details) {
                 <li class="rate"><span><i class="fas fa-star"></i></span></li>
             </ul>
             <p>(Được đánh giá bởi người dùng của Amazon)</p>
-            <h2>Giá: <span><i class="fas fa-dollar-sign"></i></span> <span>${data[prd].price}.000</span></h2>
+            <h2>Giá:<span>${data[prd].price}.000đ</span></h2>
             
             <div class="derection">
                 <ul>
@@ -69,7 +69,7 @@ function addtocart() {
     render();
 }
 
-render()
+render();
 
 function render() {
     let localarray = localStorage.getItem("product") 

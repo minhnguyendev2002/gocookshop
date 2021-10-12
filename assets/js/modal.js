@@ -89,31 +89,31 @@ let account = [
         id: 0,
         name:"Minh Đẹp Trai",
         username:"Minhnguyen2002",
-        passwword:"12345678",
+        passwword:"123456",
     },
     {
         id: 1,
         name:"Sơn gánh đội",
         username:"Nguyenson123",
-        passwword:"SonTH22002",
+        passwword:"123456",
     },
     {
         id: 2,
         name:"Phong đẹp trai",
         username:"Truongphong97",
-        passwword:"Phong123",
+        passwword:"123456",
     },
     {
         id: 3,
         name:"Vương Đẹp trai",
         username:"Hungvuong98",
-        passwword:"Vuong123",
+        passwword:"123456",
     },
     {
         id: 4,
-        name:"Minh Đẹp trai",
-        username:"Minhcho2002",
-        passwword:"12345678",
+        name:"Minh Đỗ",
+        username:"Minhco2002",
+        passwword:"123456",
     },
 ]
 

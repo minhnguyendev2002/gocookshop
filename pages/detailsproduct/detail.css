@@ -52,11 +52,10 @@
 }
 .product-infor h2 span:nth-child(1) {
     margin-left: 5px;
-    color: #0288d1;
 }
-.product-infor h2 span:nth-child(2) {
+/* .product-infor h2 span:nth-child(2) {
     color: #0288d1;
-}
+} */
 .product-infor > p {
     font-size: 17px;
     margin: 10px 0;
@@ -221,6 +220,7 @@
 .product-cart {
     display: flex;
     padding: 5px 0;
+    margin-bottom: 15px;
 }
 .cart-image {
     width: 30%;
@@ -257,6 +257,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: auto;
+    position: relative;
+    top: -5px;
 }
 .cart-infor ul input {
     border: none;
