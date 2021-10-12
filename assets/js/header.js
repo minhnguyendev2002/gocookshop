@@ -17,7 +17,13 @@ if(header) {
             </ul>
             <div class="header-direction">
                 <div class="account" id="account">
-                    <span id="Login">Đăng nhập</span>
+                    <div>
+                        <span id="Login" class="log-in">Đăng nhập</span>
+                        <ul>
+                            <li>Thông tin</li>
+                            <li class="sign-out">Đăng xuất</li>
+                        </ul>
+                    </div>
                     <span id="show-menu"><i class="fas fa-bars"></i></span>
                 </div>
             </div>

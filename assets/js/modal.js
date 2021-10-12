@@ -13,13 +13,14 @@ if(moodal) {
                         <div class="form__message form__message--error"></div>
                         <div class="form__input-group">
                             <span><i class="fas fa-user"></i></span>
-                            <input type="text" class="form__input" autofocus placeholder="Username">
+                            <input id="username" type="text" class="form__input" autofocus placeholder="Username">
                         </div>
                         <div class="form__input-group">
                             <span><i class="fas fa-lock"></i></span>
-                            <input type="password" class="form__input" autofocus placeholder="Password">
+                            <input id="password" type="password" class="form__input" autofocus placeholder="Password">
                         </div>
-                        <button class="form__button" type="submit">LOGIN</button>
+                        <span class="conguration" id="conguration"></span>
+                        <button onclick="showlog()" class="form__button" type="button">LOGIN</button>
                         <div class="Social-media">
                             <h4>Or Sign in with social platforms</h4>
                             <ul>
@@ -78,4 +79,71 @@ if(moodal) {
         </div>
     `;
     moodal.appendChild(mymodal);
+}
+
+
+/** ======================  Login  ================= */
+
+let account = [
+    {
+        id: 0,
+        name:"Minh Đẹp Trai",
+        username:"Minhnguyen2002",
+        passwword:"12345678",
+    },
+    {
+        id: 1,
+        name:"Sơn gánh đội",
+        username:"Nguyenson123",
+        passwword:"SonTH22002",
+    },
+    {
+        id: 2,
+        name:"Phong đẹp trai",
+        username:"Truongphong97",
+        passwword:"Phong123",
+    },
+    {
+        id: 3,
+        name:"Vương Đẹp trai",
+        username:"Hungvuong98",
+        passwword:"Vuong123",
+    },
+    {
+        id: 4,
+        name:"Minh Đẹp trai",
+        username:"Minhcho2002",
+        passwword:"12345678",
+    },
+]
+
+
+
+const username = document.getElementById("username"),
+      password = document.getElementById("password"),
+      conguration = document.getElementById("conguration");
+
+function showlog() {
+    var checkvalue = false;
+
+    for(var i = 0; i < account.length; i++) {
+        if(username.value === account[i].username && password.value === account[i].passwword) {
+            conguration.innerHTML = `Thành Công !!`
+            console.log(account[i])
+            localStorage.setItem("userid", account[i].id)
+            checkvalue = true;
+        } 
+    }
+    location.reload();
+}
+
+var index = localStorage.getItem("userid");
+if(localStorage.getItem("userid") === null) {
+    $(".log-in").html(`Đăng nhập`)
+    $(".log-in").attr("id", "Login")
+    $("#Login").removeClass(".show-option")
+}   else    {
+    $("#Login").addClass("show-option")
+    $("#Login").removeAttr("id");
+    $(".log-in").html(`${account[index].name}`)
 }

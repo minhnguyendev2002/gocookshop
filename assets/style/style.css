@@ -127,6 +127,7 @@ a:hover {
 .header-menu {
     flex: 1;
     height: 100%;
+    z-index: 1000;
 }
 
 .header-logo img {
@@ -202,6 +203,9 @@ a:hover {
 .account {
     text-align: right;
 }
+.account div {
+    display: inline-block;
+}
 .account span {
     border: 2px solid var(--primary-color);
     padding: 6px 15px;
@@ -221,6 +225,33 @@ a:hover {
     margin-left: 5px;
 }
 
+.account div {
+    position: relative;
+}
+.account ul {
+    position: absolute;
+    background-color: #FFF;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    top: 35px;
+    border-radius: 5px;
+    display: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.account ul.show {
+    display: block;
+}
+.account ul li {
+    padding: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .2s ease;
+}
+.account ul li:hover {
+    background-color: var(--primary-color);
+    color: #FFF;
+}
 
 
 .header-active {
@@ -554,6 +585,17 @@ a:hover {
     font-size: 14px;
     font-weight: 500;
 }
+
+.conguration {
+    color: #ee2624;
+    margin: 5px 0 10px;
+    display: none;
+}
+
+.show-conguration {
+    display: block;
+}
+
 
 
 @media (max-width: 767px) {
