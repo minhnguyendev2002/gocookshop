@@ -106,4 +106,16 @@ function option(n) {
     localStorage.setItem("mytype", n)
 }
 
+let searcharray = []
+function searchPRD() {
+    var nameprd = localStorage.getItem("search")
+    for(var i = 0; i < data.length; i++) {
+        if(nameprd === data[i].name) {
+            searcharray.push(data[i])
+        }
+    }
+    renderPRD(searcharray)
+}
+
+searchPRD();
 

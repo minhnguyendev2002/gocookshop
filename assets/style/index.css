@@ -35,10 +35,13 @@
     margin-top: 30px;
     background-color: #FFF;
 }
-.order-search span {
+.order-search button {
     padding: 0 5px;
     float: right;
     cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 .order-search input[type="text"] {
     border: none;
@@ -365,7 +368,7 @@
         padding: 10px;
         margin-top: 30px;
     }
-    .order-search span {
+    .order-search button {
         padding: 0 5px;
         float: right;
         cursor: pointer;
