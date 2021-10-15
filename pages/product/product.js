@@ -113,6 +113,10 @@ function searchPRD() {
         if(nameprd === data[i].name) {
             searcharray.push(data[i])
         }
+        else {
+            alert("Không có trong danh sách!!")
+            break;  
+        }
     }
     renderPRD(searcharray)
 }
