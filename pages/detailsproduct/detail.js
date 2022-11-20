@@ -25,8 +25,13 @@ HTMLElement.prototype.empty = function() {
     }
 }
 
+const lists = document.getElementById("cart");
+let startarray = [];
+let cartarray =  JSON.parse(localStorage.getItem("product"));
+
 if(details) {
     const item = document.createElement("DIV");
+    const id = data[prd].id;
     item.classList.add("my-product")
     item.innerHTML = `
         <div class="product-img">
@@ -48,8 +53,8 @@ if(details) {
             
             <div class="derection">
                 <ul>
-                    <li><button onclick="addtocart()" class="add-cart">Thêm vào giỏ hàng</button></li>
-                    <li><button class="haveincart" id='haveIncart'>Đã có trong giỏ hàng <span><i class="fas fa-check"></i></span></button></li>
+                    <li class="${cartarray.includes(id) ? 'hidden-cus':'block-cus'}"><button onclick="addtocart()" class="add-cart">Thêm vào giỏ hàng</button></li>
+                    <li class="${!cartarray.includes(id) ? 'hidden-cus':'block-cus'}"><button class="haveincart" id='haveIncart'>Đã có trong giỏ hàng <span><i class="fas fa-check"></i></span></button></li>
                 </ul>
             </div>
         </div>
@@ -57,15 +62,13 @@ if(details) {
     details.appendChild(item);
 }
 
-const lists = document.getElementById("cart");
-let startarray = [];
-let cartarray =  JSON.parse(localStorage.getItem("product"));
+
 function addtocart() {
     localStorage.setItem("product", JSON.stringify(startarray))
     cartarray.push(data[prd].id)
     let filterarray = [...new Set(cartarray)]
     localStorage.setItem(`product`, JSON.stringify(filterarray))
-
+    location.reload();
     render();
 }
 
@@ -76,7 +79,6 @@ function render() {
     let myarray = eval(localarray).join(",").split`,`.map(x=>+x)
     lists.empty();
     PrdinCart(data,myarray)
-    console.log(myarray)
 }
 
 

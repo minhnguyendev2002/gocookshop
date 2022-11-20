@@ -37,7 +37,7 @@ CloseMenufood.onclick = function() {
 
 function renderPRD(array) {
     const mylistprd = document.getElementById("my-list-prd")
-    for(var i = 0; i < array.length; i++) {
+    for(var i = 0; i < array.slice(0, 3).length; i++) {
         if(mylistprd) {
             const item = document.createElement("DIV")
             item.classList.add("product-item","col","col-xl-3","col-lg-3","col-sm-4","col-6")

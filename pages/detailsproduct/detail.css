@@ -78,9 +78,8 @@
 .derection ul {
     margin: 15px 0 0;
     padding: 5px 0;
-}
-.derection ul li {
-    margin-right: 20px;
+    display: flex;
+    gap: 20px !important;
 }
 .haveincart .fa-check {
     color: var(--primary-color);
@@ -308,4 +307,11 @@
     .options,.prds-more,.my-cart {
         margin-top: 20px;
     }
+}
+
+.hidden-cus {
+    display: none !important;
+}
+.block-cus {
+    display: block !important;
 }

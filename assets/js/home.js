@@ -1,6 +1,6 @@
 
 function mylist(obj,array,content) {
-    for(var i = 0; i < array.length; i++) {
+    for(var i = 0; i < array.slice(0,3).length; i++) {
         if(obj) {
             const item = document.createElement("DIV")
             item.classList.add("item-product","col","col-xl-4","col-lg-4","col-sm-4","col-6")

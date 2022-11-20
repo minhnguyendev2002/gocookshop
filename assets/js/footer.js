@@ -9,7 +9,7 @@ if(footer) {
                         <div class="footer-about col col-12 col-md-6 col-xl-4">
                             <ul>
                                 <li><h3>Về chúng tôi</h3></li>
-                                <li><span><i class="fas fa-map-marker"></i></span>Đại học Thủy Lợi CS1</li>
+                                <li><span><i class="fas fa-map-marker"></i></span>Đại học Đại Nam CS1</li>
                                 <li><span><i class="fas fa-phone"></i></span>+84 1900 2611</li>
                                 <li><span><i class="fas fa-clock"></i></span>00:00 - 23:59</li>
                             </ul>
@@ -27,7 +27,7 @@ if(footer) {
                         <div class="footer-input col col-12 col-md-6 col-xl-4">
                             <ul>
                                 <li><h3>Liên hệ quảng cáo</h3></li>
-                                <li><input type="text" title="Hãy nhập Email..."/></li>
+                                <li><input type="text" placeholder="Hãy nhập Email..."/></li>
                                 <li><button>Submit</button></li>
                             </ul>
                         </div>
