@@ -11,9 +11,9 @@ if(header) {
             <ul class="header-menu myMenu">
                 <span class="close-menu" id="close-menu"><i class="fas fa-times"></i></span>
                 <li class="order-btn active"><a href="#">Đặt đồ ăn</a></li>
-                <!-- <li><a href="/">Dụng cụ bếp</a></li> -->
                 <li class="instruct"><a href="#instruc">Công thức bếp</a></li>
                 <li class="choose"><a href="#choose">Hãy chọn chúng tôi</a></li>
+                <li><a href="./pages/about/index.html">Về chúng tôi</a></li>
             </ul>
             <div class="header-direction">
                 <div class="account" id="account">
