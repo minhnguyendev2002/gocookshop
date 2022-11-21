@@ -17,6 +17,9 @@ $(document).ready(function() {
     $(".choose a").click(function() {
         $(this).attr("href","../blog/blog.html")
     })
+    $(".about a").click(function() {
+        $(this).attr("href","../about/index.html")
+    })
 
 })
 

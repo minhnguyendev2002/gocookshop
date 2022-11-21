@@ -14,6 +14,9 @@ $(document).ready(function() {
         $(".option span").removeClass("ops-active")
         $(this).addClass("ops-active")
     })
+    $(".about a").click(function() {
+        $(this).attr("href","../about/index.html")
+    })
 })
 
 var prd = localStorage.getItem("detailsPRD");

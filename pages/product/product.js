@@ -17,6 +17,9 @@ $(document).ready(function() {
     $(".choose a").click(function() {
         $(this).attr("href","../blog/blog.html")
     })
+    $(".about a").click(function() {
+        $(this).attr("href","../about/index.html")
+    })
 
 })
 
@@ -64,7 +67,7 @@ function getlocalPRD(n) {
 
 
 let NewArray = [];
-var typeArray = localStorage.getItem("mytype");
+var typeArray = localStorage.getItem("mytype") === null ? 'food' : localStorage.getItem("mytype");
 function getArrayPRD() {
     for(var i = 0; i < data.length; i++) {
         if(data[i].type_prd === typeArray) {

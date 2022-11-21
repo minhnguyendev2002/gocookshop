@@ -18,6 +18,9 @@ $(document).ready(function() {
     $(".instruct a").click(function() {
         $(this).attr("href", "../product/product.html")
     })
+    $(".about a").click(function() {
+        $(this).attr("href","../about/index.html")
+    })
 })
 
 
