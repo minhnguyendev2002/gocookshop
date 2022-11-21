@@ -57,9 +57,9 @@ if(details) {
             <div class="derection">
                 <ul>
                     <li class="${cartarray && cartarray.includes(id) ? 'hidden-cus':'block-cus'}"><button onclick="addtocart()" class="add-cart">Thêm vào giỏ hàng</button></li>
-                    <li class="${cartarray && !cartarray.includes(id) ? 'hidden-cus':'block-cus'}"><button class="haveincart" id='haveIncart'>Đã có trong giỏ hàng <span><i class="fas fa-check"></i></span></button></li>
+                    <li class="${!cartarray || !cartarray.includes(id) ? 'hidden-cus':'block-cus'}"><button class="haveincart" id='haveIncart'>Đã có trong giỏ hàng <span><i class="fas fa-check"></i></span></button></li>
                 </ul>
-            </div>
+            </div> 
         </div>
     `;
     details.appendChild(item);
