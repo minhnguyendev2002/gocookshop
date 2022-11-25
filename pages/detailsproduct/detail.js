@@ -3,12 +3,10 @@ $(document).ready(function() {
     $(".footer-logo img").attr("src", "../../../assets/img/logo.svg")
     $(".order-btn a").attr("href", "../../../index.html")
     $(".instruct a").attr("href", "../product/product.html")
-    $(".choose a").attr("href", "../blog/blog.html")
 
     $(".order-btn a").html("Trang chủ")
     $(".order-btn").removeClass("active")
     $(".instruct a").html("Đặt đồ ăn")
-    $(".choose a").html("Công thức bếp")
 
     $(".option span").click(function() {
         $(".option span").removeClass("ops-active")
@@ -26,13 +24,14 @@ HTMLElement.prototype.empty = function() {
     while (this.firstChild) {                                       
         this.removeChild(this.firstChild);
     }
-}
+} /// Một hàm xóa các phần tử ơ DOM
 
 const lists = document.getElementById("cart");
 let startarray = [];
-let cartarray =  JSON.parse(localStorage.getItem("product"));
+let cartarray = localStorage.getItem("product") ? JSON.parse(localStorage.getItem("product")) : []; 
+// Sử dụng toán tử 3 ngôi để lấy dữ liệu trên localStorage
 
-if(details) {
+if(details) { // in ra Chi tiết của sản phẩm
     const item = document.createElement("DIV");
     const id = data[prd].id;
     item.classList.add("my-product")
@@ -66,12 +65,12 @@ if(details) {
 }
 
 
-function addtocart() {
-    localStorage.setItem("product", JSON.stringify(startarray))
-    cartarray.push(data[prd].id)
-    let filterarray = [...new Set(cartarray)]
-    localStorage.setItem(`product`, JSON.stringify(filterarray))
-    location.reload();
+function addtocart() { /// Thêm vào giỏ hàng
+    localStorage.setItem("product", JSON.stringify(startarray)) // Tạo một mảng rỗng trên localStorage
+    cartarray.push(data[prd].id) 
+    let filterarray = [...new Set(cartarray)] // Lọc những sản phẩm giống nhau
+    localStorage.setItem(`product`, JSON.stringify(filterarray)) // Đẩy lên localStorage để lưu trữ
+    location.reload(); // load window
     render();
 }
 
@@ -81,11 +80,22 @@ function render() {
     let localarray = localStorage.getItem("product") 
     let myarray = eval(localarray).join(",").split`,`.map(x=>+x)
     lists.empty();
-    PrdinCart(data,myarray)
+    PrdinCart(data,myarray) // in ra giao diện
+}
+
+function removeProduct(id) { // xóa sản phẩm
+    let localarray = localStorage.getItem("product") 
+    let myarray = eval(localarray).join(",").split`,`.map(x=>+x)
+    const filterArr = myarray.filter(item => {
+        return item != id
+    })
+    localStorage.setItem(`product`, filterArr)
+    window.location.reload();
+    PrdinCart(data,filterArr);
 }
 
 
-function PrdinCart(array,index) {
+function PrdinCart(array,index) { // in sản phẩm trong giỏ hàng
 for(var i = 0; i < array.length; i++) {
     const lists = document.getElementById("cart")
     if(lists) {
@@ -93,12 +103,12 @@ for(var i = 0; i < array.length; i++) {
         item.classList.add("product-cart")
         item.innerHTML = `
             <div class="cart-image">
-                <img src="${array[index[i]].image}" alt="/">
+                <img src="${array[index[i]]?.image}" alt="/">
             </div>
             <div class="cart-infor">
                 <div>
                     <h4>${array[index[i]].name}</h4>
-                    <span><i class="far fa-trash-alt"></i></span>
+                    <span onclick="removeProduct(${index[i]})"><i class="far fa-trash-alt"></i></span>
                 </div>
                 <ul>
                     <li class="cart-count">

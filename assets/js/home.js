@@ -1,3 +1,14 @@
+$(document).ready(function() {
+    $(".header-logo img").attr("src", "../../../assets/img/logo.svg")
+    $(".footer-logo img").attr("src", "../../../assets/img/logo.svg")
+    $(".order-btn a").attr("href", "../../../index.html")
+    $(".instruct a").attr("href", "./pages/product/product.html")
+
+    $(".order-btn a").html("Trang chủ")
+    $(".instruct a").html("Đặt đồ ăn")
+    $(".order-btn").addClass("active")
+
+})
 
 function mylist(obj,array,content) {
     for(var i = 0; i < array.slice(0,3).length; i++) {

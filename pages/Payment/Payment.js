@@ -9,14 +9,11 @@ $(document).ready(function() {
     
     $(".order-btn a").html("Trang chủ")
     $(".instruct a").html("Đặt đồ ăn")
-    $(".choose a").html("Công thức bếp")
 
     $(".order-btn a").click(function() {
         $(this).attr("href","../../index.html")
     })
-    $(".choose a").click(function() {
-        $(this).attr("href","../blog/blog.html")
-    })
+
     $(".about a").click(function() {
         $(this).attr("href","../about/index.html")
     })
